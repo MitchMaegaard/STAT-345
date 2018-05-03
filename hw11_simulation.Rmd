@@ -1,0 +1,19 @@
+---
+title: "hw11_simulation"
+author: "Mitch Maegaard"
+date: "May 3, 2018"
+output: html_document
+---
+
+Write a function `generate_data(n, p)` which returns a list with the following elements: `covariates` which is a n-by-p matrix of draws from the standard normal distribution, and `responses` which is a vector of length n of draws from the standard normal.
+
+```{r}
+generate_data <- function(n, p){
+  # create an nXp matrix of draws from N(0,1)
+  covariates <- matrix(data = rnorm(n*p, 0, 1), nrow = n, ncol = p)
+  # create a vector of length n of draws from N(0,1)
+  responses <- rnorm(n, 0, 1)
+  # return a list with the elements we created
+  return(list(covariates, responses))
+}
+```
